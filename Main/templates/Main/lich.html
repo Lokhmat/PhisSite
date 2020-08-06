@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+
+<center style='width: 60%; margin-left: 20%;'>
+	<br>
+	<br>
+	{% for man in tasks %}
+	{% if username == man.login %}
+	
+	
+		<div>
+			<div id='pic'><img src="/static/img/{{ava}}.jpg" style="width: 90%;"></div>
+			<!--<div id="red"><a href="../red">Редактировать профиль</a></div>-->
+			<br>
+			<div id="name_of_man">Логин: {{man.login}}</div>
+			<br>
+			<div id="done_t">Сделанные задачи: {{done}}</div>
+			<br>
+			<!--
+			<div id='teachers'>Учителя: {{man.teachers}}</div>
+			<br>
+			<div id='olim'>Интересующие олимпиады: {{man.olimps}}</div>
+		-->
+		</div>
+	
+	{% endif %}
+	{% endfor %}
+
+</center>
+
+<br>
+</body>
+</html>

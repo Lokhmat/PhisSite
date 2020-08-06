@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+<br>
+<br>
+<!--
+<center id = "home_cen1" style = "width: 60%; padding-left: 20%;">
+	<br>
+	<div id = "fronton">
+		<p style=" padding-right: 90%;padding-top: 1%;padding-bottom: 1%; font-size: 1.5em;">7 класс</p>
+	</div>
+	<br>
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Профильный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 1 and book.grade == 7%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Общеобразовательный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 0 and book.grade == 7%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+	<div id = "fronton">
+		<p style=" padding-right: 90%;padding-top: 1%;padding-bottom: 1%; font-size: 1.5em;">8 класс</p>
+	</div>
+	<br>
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Профильный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 1 and book.grade == 8%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Общеобразовательный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 0 and book.grade == 8%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<div id = "fronton">
+		<p style=" padding-right: 90%;padding-top: 1%;padding-bottom: 1%; font-size: 1.5em;">9 класс</p>
+	</div>
+	<br>
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Профильный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 1 and book.grade == 9%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Общеобразовательный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 0 and book.grade == 9 %}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<div id = "fronton">
+		<p style=" padding-right: 90%;padding-top: 1%;padding-bottom: 1%; font-size: 1.5em;">10 класс</p>
+	</div>
+	<br>
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Профильный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 1 and book.grade == 10%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Общеобразовательный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 0 and book.grade == 10%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<div id = "fronton">
+		<p style=" padding-right: 90%;padding-top: 1%;padding-bottom: 1%; font-size: 1.5em;">11 класс</p>
+	</div>
+	<br>
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Профильный уровень</p>
+	</div>
+	<br>
+	{% for book in list %}
+	{% if book.pro == 1 and book.grade == 11%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<div id = "fron">
+			<p style=" padding-right: 80%;padding-top: 1%;padding-bottom: 1%; font-size: 1.3em;">Общеобразовательный уровень</p>
+			<br>
+	</div>
+	{% for book in list %}
+	{% if book.pro == 0 and book.grade == 11%}
+	<br>
+	<div id = "block">
+		<p>Название: {{book.name}}</p><p>Автор: {{book.author}}</p><a href="{% static book.link %}.pdf" download="" style="color:#ff4040; text-decoration:none;">Читать</a>
+	</div>
+	<br>
+	{%endif%}
+	{% endfor %}
+	<br>
+
+
+	<br>
+</center>
+-->
+<center>
+<div id="std-b">
+		<img src="{%static 'img/Belolip.jpg' %}" id=pre_v>
+		<p id="name_b" style="padding-top: 5%; float: left; margin-left: 20px; text-align: center;">C.H.Белолипецкий Задачник по физике <a href="{% static 'pdf/Belolip.pdf' %}" style="color:#4c6687;" download="">Скачать</a></p>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="std-b">
+		<img src="{%static 'img/ch.jpg' %}" id=pre_v>
+		<p id="name_b" style="padding-top: 5%; float: left; margin-left: 20px; text-align: center;">А.И. Черноуцан Физика задачи с ответами и решениями <a href="{% static 'pdf/Cher.pdf' %}" style="color:#4c6687;" download="">Скачать</a></p>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="std-b">
+		<img src="{%static 'img/kiki7.jpg' %}" id=pre_v>
+		<p id="name_b" style="padding-top: 5%; float: left; margin-left: 20px; text-align: center;"> Л.А Кирик Задачник 7 класс<a href="{% static 'pdf/kirik7.pdf' %}" style="color:#4c6687;" download="">Скачать</a></p>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="std-b">
+		<img src="{%static 'img/kirik8.jpg' %}" id=pre_v>
+		<p id="name_b" style="padding-top: 5%; float: left; margin-left: 20px; text-align: center;"> Л.А Кирик Задачник 8 класс<a href="{% static 'pdf/kirik8.pdf' %}" style="color:#4c6687;" download="">Скачать</a></p>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="std-b">
+		<img src="{%static 'img/kir79.jpg' %}" id=pre_v>
+		<p id="name_b" style="padding-top: 5%; float: left; margin-left: 20px; text-align: center;"> Л.А Кирик Задачник 7-9 класс<a href="{% static 'pdf/kirik7-9.pdf' %}" style="color:#4c6687;" download="">Скачать</a></p>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="std-b">
+		<img src="{%static 'img/3800.jpg' %}" id=pre_v>
+		<p id="name_b" style="padding-top: 5%; float: left; margin-left: 20px; text-align: center;">3800 задач по физике для школьников и поступающих в вузы <a href="{% static 'pdf/3800.pdf' %}" style="color:#4c6687;" download="">Скачать</a></p>
+		
+	</div>
+
+</center>
+
+	<br>
+	<br>
+	<br>
+
+</body>
+</html>

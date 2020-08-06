@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	
+</header>
+<br>
+<br>
+
+<h3 id="classes">7 Класс</h3>
+<p id="nameof">7.1 Введение</p>
+<p id="nameof">7.2 Первоначальные сведения о строении вещества</p>
+<p id="nameof">7.3 Взаимодействие тел</p>
+<p id="nameof">7.4 Давление твёрдых тел, жидкостей и газов</p>
+<p id="nameof">7.5 Работа, мощность, энергия</p>
+<h3 id="classes">8 Класс</h3>
+<p id="nameof">8.1 Тепловые явления</p>
+<p id="nameof">8.2 Агрегатные состояния вещества</p>
+<p id="nameof">8.3 Электромагнитные явления</p>
+<p id="nameof">8.4 Cветовые явления</p>
+<h3 id="classes">9 Класс</h3>
+<p id="nameof">9.1 Законы взаимодействия и движения тел</p>
+<p id="nameof">9.2 Механические колебания и волны. Звук</p>
+<p id="nameof">9.3 Электромагнитные явления</p>
+<p id="nameof">9.4 Строение атома и атомного ядра. Использование энергии атомных ядер</p>
+<h3 id="classes">10 Класс</h3>
+<p id="nameof">10.1 Механика</p>
+<p id="nameof">10.2 Основы молекулярно-кинетической теории</p>
+<p id="nameof">10.3 Основы термодинамики</p>
+<p id="nameof">10.4 Основы электродинамики</p>
+<p id="nameof">10.5 Законы постоянного тока</p>
+<p id="nameof">10.6 Электрический ток в различных средах</p>
+<h3 id="classes">11 Класс</h3>
+<p id="nameof">11.1 Магнитное поле</p>
+<p id="nameof">11.2 Электромагнитная индукция</p>
+<p id="nameof">11.3 Электромагнитные колебания и волны</p>
+<p id="nameof">11.4 Оптика</p>
+<p id="nameof">11.5 Квантовая физика</p>
+<p id="nameof">11.6 Давление света</p>
+<p id="nameof">11.7 Атомная физика</p>
+<p id="nameof">11.8 Физика атомного ядра</p>
+<p id="nameof">11.9 Подготовка к ЕГЭ</p>
+<br>
+<br>
+
+</body>
+</html>

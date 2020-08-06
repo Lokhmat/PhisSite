@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<div class="wrapper">
+<div class="content">
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+<br>
+
+<br>
+<style type="text/css">
+	#olimp a{
+		background: url('/static/img/tasks.jpg');
+		width:64%;
+		background-size: cover;
+		height: 200px;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: left;
+	}
+	#library a{
+		background: url('/static/img/lib1.jpg');
+		width:34%;
+		height: 200px;
+		background-size: cover;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: right;
+	}
+	#prog a{
+		background: url('/static/img/sch.jpg');
+		width:49%;
+		height: 200px;
+		background-size: cover;
+		margin-top: 1.7%;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: right;
+	}
+	#cor a{
+		background: url('/static/img/corse.jpg');
+		width:49%;
+		height: 200px;
+		background-size: cover;
+		margin-top: 1.7%;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: left;
+	}
+	#task a{
+		background: url('/static/img/olymp1.jpg');
+		width:34%;
+		height: 200px;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: left;
+		background-size: cover;
+		margin-top: 1.7%;
+	}
+	#make_cor a{
+		background: url('/static/img/make.jpg');
+		width:64%;
+		background-size: cover;
+		height: 200px;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: right;
+		margin-top: 1.7%;
+	}
+</style>
+
+
+
+
+<center id = "home_cen">
+	<div id="menu">Разделы<hr></div>
+	
+	<br>
+	<div id = "menuhref">
+		<div id = "first">
+			<div id = "olimp"><a id = "ol" href="/tasks"><h5>Задачи</h5></a></div>
+			<div id = "library"><a href="/lib"><h5>Библиотека</h5></a></div>
+		</div>
+		<div id="second">
+			<div id = "prog"><a href="/prog"><h5>Школьная программа</h5></a></div>
+			<div id = "cor"><a href="/courses"><h5>Курсы</h5></a></div>
+		</div>
+		<div id="third">
+			<div id = "task"><a href="/olimp"><h5>Олимпиады</h5></a></div>
+			<div id = "make_cor"><a href="/lich"><h5>Личный кабинет</h5></a></div>
+		</div>
+	</div>
+	<br>
+</center>
+<br>
+</div>
+<br>
+<br>
+<br>
+<footer>2018-2019, Москва</footer>
+
+<br>
+<br>
+</div>
+</body>
+</html>

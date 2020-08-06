@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/course" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="../auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="/auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+<br>
+<br>
+<style type="text/css">
+	
+	#course_menu{
+  		width: 70%;
+  		padding: 10%;
+	}
+	#mech{
+		background: url('/static/img/mech.jpg');
+		width:65%;
+		display: table;
+		background-size: cover;
+		height: 400px;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: left;
+
+		margin-top: 1.7%;
+	  
+	}
+	#termo{
+		background: url('/static/img/termo.jpg');
+		width:65%;
+		display: table;
+		background-size: cover;
+		height: 400px;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: left;
+
+		margin-top: 1.7%;
+	  
+	}
+	#electro{
+		background: url('/static/img/electro.jpg');
+		width:65%;
+		display: table;
+		background-size: cover;
+		height: 400px;
+		box-sizing: border-box;
+		border-radius: 6px;
+		float: left;
+
+		margin-top: 1.7%;
+	  
+	}
+	#in_m{
+		color: #cac9d4;
+		float: left;
+		text-align: left;
+		font-size: 1.3em;
+    	width: 100%;
+    	height: 50%;
+    	padding: 10px;
+
+	}
+	#all{
+		width: 70%;
+		margin-left: 25%;
+	}
+	#in_m a{
+		width:100%;
+	}
+</style>
+
+
+<div id="all">
+<div id="mech">
+	<div id="in_m">
+	<p style="font-size: 1.5em;" >Основные законы механики</p>
+	<div>
+	<a href="{% static 'pdf/mech.pdf' %}" id="fir" style="color:#cac9d4;font-size: 1.1em; " download="">Скачать</a>
+	</div>
+	<a href="courses/1" id="sec" style="color:#cac9d4; margin-top: 50px; font-size: 1.1em;">Сдать задачи</a>
+	</div>
+</div>
+<div id="termo">
+	<div id="in_m">
+	<p style="font-size: 1.5em;" >Термодинамика и МКТ</p>
+	<div>
+	<a href="{% static 'pdf/termo.pdf' %}" id="fir" style="color:#cac9d4; font-size: 1.1em;" download="">Скачать</a>
+	</div>
+	<a href="courses/2" id="sec" style="color:#cac9d4; margin-top: 50px; font-size: 1.1em;">Сдать задачи</a>
+	</div>
+</div>
+<div id="electro">
+	<div id="in_m">
+	<p style="font-size: 1.5em;" >Электростатика и законы постоянного тока</p>
+	<div>
+	<a href="{% static 'pdf/electro.pdf' %}" id="fir" style="color:#cac9d4; font-size: 1.1em;" download="">Скачать</a>
+	</div>
+	<a href="courses/3" id="sec" style="color:#cac9d4; margin-top: 50px; font-size: 1.1em;">Сдать задачи</a>
+	</div>
+</div>
+<div style="width: 65%; height: 10px; display: table;">
+	
+</div>
+</div>
+
+
+
+<br>
+<br>
+
+
+
+</body>
+</html>

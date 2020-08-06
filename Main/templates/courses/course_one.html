@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="../lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="../auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="../auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="../auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+<br>
+{% if flag %}
+{% for b in inner_blocks %}
+	<div id="block">
+		{% for e in b %}
+			{% if e.name in blocks %}
+				<br>
+				<p id = "name" align="justify" style="margin-top: 10px;">
+					{{e.name}}
+				</p>
+				<br>
+				<br>
+				
+			{% endif %}
+			{% if e.name in tasks %}
+			{% if e.id in done %}
+				<a href="/{{e.id}}" id="link_to_task" style="color: #278c50">Задача: {{e.name}}</a>
+				<br>
+				<br>
+			{% else %}
+				<a href="/{{e.id}}" id="link_to_task" style="color: #db5e5e">Задача: {{e.name}}</a>
+				<br>
+				<br>
+			{% endif %}
+			{% endif %}
+			{% if e.name in kost %}
+				
+				<p id="body" align="justify">
+					{{e.name}}	
+				</p>
+				<br>
+				<br>
+			{% endif %}
+			{% if e.name in img_id %}
+				<div>
+				<div id="pic" style="background: url('/static/img/{{e.name}}.jpg'); width: 70%; margin-left: 20%; min-height: 500px;margin-top: 50px;background-size: cover;"><p></p><br></div>
+				</div>
+				<br>
+				<br>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endfor %}
+
+{% else %}
+<h3 style="margin-left: 35%;">Авторизуйтесь, чтобы сдать задачи</h3>
+{% endif %}
+<br>
+
+
+<br>
+<br>
+</body>
+</html>

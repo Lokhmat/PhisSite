@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+	<script type="text/javascript" src="{% static 'JS/scripts.js' %}"></script>
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+<br>
+<br>
+	{% for task in object_list %}
+		{% if task.id == task_id %}
+			<div id = 'task_one_block'>
+				<h3 style="color:black; float:left;">{{task.name}}</h3>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				{% if b %}
+					<center><img src="{% static 'img/'|add:task.text|add:'.jpg' %}" style="width: 70%;"></center>
+				
+				{% else %}
+				<p id = 'mainbody_task'>{{task.text}}</p>
+				{% endif %}
+				<br>
+				<br>
+				{% if y %}
+				{% block test_system %}
+				<form action="/{{task.id}}" method="POST">
+				{% csrf_token %} 
+				<label style="float:left; padding-left:10%; " for = 'answer'><input name = "answer" type="text" id="answer" placeholder="Пример: 23,45"></label>
+				
+				<input style="border:none; width:10%; height: 3%; line-height: 1.9em; background-color:#4c6687; color: white;" type="submit" value="Отправить">
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div id = "testing_service">Проверка: 
+					<p style="text-align: left; margin-left: 10px; ">Результат: {{error}}</p>
+				</div>
+				</form>
+				{% endblock test_system%}
+				{% else %}
+				<div id="ans">
+					<p>Ответ:<img src="{% static 'img/'|add:task.answer|add:'.jpg' %}"></p>
+				</div>
+				<a href="#ans" id="click" style="color:#4c6687">
+				<p id="dd">Открыть ответ</p>
+				</a>
+				<a href="#" id="back" style="color: #4c6687;">Закрыть</a>
+				{% endif %}
+			</div>
+		{% endif %}
+	{% endfor %}
+
+</body>
+</html>

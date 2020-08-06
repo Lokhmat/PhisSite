@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% block test_system %}
+				<form action="/send_url" method="POST">
+				{% csrf_token %} 
+				<label style="float:left; padding-left:10%; " for = 'answer'><input name = "answer" type="text" id="answer" placeholder="Пример: 23,45"></label>
+				
+				<input style="border:none; width:10%; height: 3%; line-height: 1.9em; background-color:#4c6687; color: white;" type="submit" value="Отправить">
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div id = "testing_service">Проверка: 
+					<p style="text-align: left; margin-left: 10px; ">Результат: {{error}}</p>
+				</div>
+				</form>
+	{% endblock test_system%}
+</body>
+</html>

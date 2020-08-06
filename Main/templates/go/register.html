@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/course" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	<!--
+	<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	-->
+</header>
+<br>
+<br>
+
+<center id = "log_cen">
+	{% load staticfiles %}
+
+{% block login_auth %}
+
+    <div  class="wrapp_form">
+
+            <form action="/auth/register" method="POST">
+
+                {% csrf_token %}
+
+                {% for field in register_form %}
+
+                       <div class="form-group register_style">
+
+                        {{ field.errors }}
+
+                        {{ field.label_tag }}
+
+                        {{ field }}
+
+                         </div>
+
+                {% endfor %}
+<input  type="submit" value="SIGN UP" class="submit_auth">
+
+            </form>
+
+    </div>
+
+{% endblock login_auth %}
+</center>
+
+
+
+</body>
+</html>

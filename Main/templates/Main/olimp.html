@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+	<script type="text/javascript" src="{% static 'JS/scripts.js' %}"></script>
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+<br>
+<br>
+	<center>
+		<h3>Первый уровень:</h3>
+		<div id='first_l'>
+			<div id="left_o">
+				<h4>МОШ по физике</h4>
+				<br>
+				<p>Уровень:1</p>
+				<br>
+				<p>Приоритет:Высокий</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Высокая</p>
+				<br>
+				<p>Дата начала:5.10</p>
+				<br>
+				<p><a href="http://mosphys.olimpiada.ru/" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px;width: 40%;">
+		</div>
+		<div id='first_l'>
+		<br>
+		<br>
+			<div id="left_o">
+				<h4>Физтех</h4>
+				<br>
+				<p>Уровень:1</p>
+				<br>
+				<p>Приоритет:Высокий</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Средняя</p>
+				<br>
+				<p>Дата начала:30.09</p>
+				<br>
+				<p><a href="https://olymp-online.mipt.ru/" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px; width: 40%;">
+		</div>
+		<div id='first_l'>
+		<br>
+		<br>
+			<div id="left_o">
+				<h4>Росатом</h4>
+				<br>
+				<p>Уровень:1</p>
+				<br>
+				<p>Приоритет:Высокий</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Низкая</p>
+				<br>
+				<p>Дата начала:7.10</p>
+				<br>
+				<p><a href="https://mephi.ru/entrant/events/olimpiads/rosatom/index.php" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px; width: 40%;">
+		</div>
+		<div id='first_l'>
+		<br>
+		<br>
+			<div id="left_o">
+				<h4>Покори Воробьёвы горы</h4>
+				<br>
+				<p>Уровень:1</p>
+				<br>
+				<p>Приоритет:Высокий</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Средняя</p>
+				<br>
+				<p>Дата начала:21.11</p>
+				<br>
+				<p><a href="https://pvg.mk.ru/" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px; width: 40%;">
+		</div>
+		<br>
+		<br>
+		<br>
+		<h3>Второй уровень</h3>
+		<div id='second_l'>
+			<br>
+			<br>
+			<div id="left_o">
+				<h4>Ломоносов</h4>
+				<br>
+				<p>Уровень:2</p>
+				<br>
+				<p>Приоритет:Высокий</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Высокая</p>
+				<br>
+				<p>Дата начала:ноябрь</p>
+				<br>
+				<p><a href="https://olymp.msu.ru/" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px; width: 40%;">
+			</div>
+			
+		</div>
+		<div id='second_l'>
+			<br>
+			<br>
+			<div id="left_o">
+				<h4>Высшая проба</h4>
+				<br>
+				<p>Уровень:2</p>
+				<br>
+				<p>Приоритет:Высокий</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Средняя</p>
+				<br>
+				<p>Дата начала:17.11</p>
+				<br>
+				<p><a href="https://olymp.hse.ru/mmo/" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px; width: 40%;">
+			</div>
+			
+		</div>
+		<div id='second_l'>
+			<br>
+			<br>
+			<div id="left_o">
+				<h4>Курчатов</h4>
+				<br>
+				<p>Уровень:2</p>
+				<br>
+				<p>Приоритет:Средний</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Высокая</p>
+				<br>
+				<p>Дата начала:4.2</p>
+				<br>
+				<p><a href="http://olimpiadakurchatov.ru/current" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px; width: 40%;">
+			
+			
+		</div>
+		<div id='second_l'>
+			<br>
+			<br>
+			<div id="left_o">
+				<h4>Турнир Ломоносова</h4>
+				<br>
+				<p>Уровень:2</p>
+				<br>
+				<p>Приоритет:Средний</p>
+			</div>
+			<div id="right_o">
+				<p>Сложность:Сложная</p>
+				<br>
+				<p>Дата начала:29.09</p>
+				<br>
+				<p><a href="https://turlom.olimpiada.ru/" style="color:#4c6687;">Сайт</a></p>
+			</div>
+			<br>
+			<br>
+			<hr style="background-color:#4c6687; min-height: 3px; width: 40%;">
+			
+			
+		</div>
+	</center>
+
+
+
+<div style="min-height: 50px;"></div>
+</body>
+</html>

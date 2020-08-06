@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/course" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		
+	</div>
+</header>
+<br>
+<br>
+
+<center id = "log_cen">
+
+	{% block login_auth %}
+	<div class="login">
+	<form action="/auth/login" method="POST">
+	{% csrf_token %} 
+	<label for="username">Логин</label>
+	<input type="text" name="username" id="username">
+	<label for="password">Пароль</label>
+	<input type="password" name="password" id="password">
+	{% if login_error %} 
+	<label class="error">{{ login_error }}</label>
+	{% endif %}
+	<input type="submit" value="Войти">
+	</form>
+	</div>
+	{% endblock login_auth %}
+
+</center>
+
+
+
+</body>
+</html>

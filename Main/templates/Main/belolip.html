@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physycally</title>
+	
+	<meta charset="utf-8">
+	<meta name="description" content= 'Школа физики'/>
+	<meta name="keywords" content="физика, школа, задачи, рофл">
+	{% load staticfiles %}
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}" >
+</head>
+	<link href="{% static 'img/icon.ico' %}" rel="shortcut icon" type="image/x-icon">
+<body>
+<header>
+	<div id = "head">
+	<a href="/" id = "icon" title = "На главную"><img src="{% static 'img/icon.ico' %}"></a>
+	
+	
+		<a href="/lib" id="fo">Библиотека материалов</a><a href="/courses" id="fo" >Курсы</a><a href="/tasks" id="fo" >Задачи</a>
+	
+	
+		<div id = "blok-reg">
+			{%if username %}
+				<p style="color:white; text-align: right;">Вы вошли как: <a href="/lich" style="padding-right: 10px;">{{username}}</a> <a style="padding-right: 10px;" href="auth/logout">Выйти</a></p>
+			{% else %}
+				<p style="color:white; text-align: right; padding-right: 10px;"><a href="auth/register" style="margin-right: 15px;">Зарегистрироваться</a><a href="auth/login" >Войти</a></p>
+			{% endif %}
+		</div>
+	</div>
+</header>
+<br>
+<br>
+<center>
+	<div id="top"><img src="{% static 'img/Belolip.jpg' %}" id="pre_v" ><p id="name_b" style="padding-top: 5%; float: left; margin-left: 20px; text-align: center;">C.H.Белолипецкий Задачник по физике </p></div>
+	<br>
+	<!--
+	<div align="justify" style="width: 70%; margin-left: 15%; padding: 10px; text-align: justify; min-height: 300px; margin-top: 10%; text-align: left;">
+		{% for e in tasks %}
+			<a href="/{{e.id}}" style="color: #4c6687; padding-right:7px;padding-left:7px; margin-top: 10px;">{{e.name}}</a>
+
+		{% endfor %}
+	</div>
+
+<br>
+<br>
+-->
+<br>
+<br>
+<div class="demo">
+    <input class="hide" id="hd-1" type="checkbox">
+    <label for="hd-1">Механика</label>
+    <div align="justify" style="width: 70%; margin-left: 15%; padding: 10px; text-align: justify; min-height: 300px; margin-top: 10%; text-align: left;">
+		{% for a in tasks1 %}
+			<a href="/{{a.id}}" style="color: #4c6687; padding-right:7px;padding-left:7px;padding-top: 20px;">{{a.name}}</a>
+
+		{% endfor %}
+	</div>
+        <br/>
+        <br/>
+    <input class="hide" id="hd-2" type="checkbox">
+    <label for="hd-2">Молекулярная физика и термодинамика</label>
+    <div align="justify" style="width: 70%; margin-left: 15%; padding: 10px; text-align: justify; min-height: 300px; margin-top: 10%; text-align: left;">
+		{% for b in tasks2 %}
+			<a href="/{{b.id}}" style="color: #4c6687; padding-right:7px;padding-left:7px;padding-top: 20px;">{{b.name}}</a>
+
+		{% endfor %}
+	</div>
+        <br/>
+        <br/>
+    <input class="hide" id="hd-3" type="checkbox">
+    <label for="hd-3">Электричество и магнетизм</label>
+    <div align="justify" style="width: 70%; margin-left: 15%; padding: 10px; text-align: justify; min-height: 300px; margin-top: 10%; text-align: left;">
+		{% for c in tasks3 %}
+			<a href="/{{c.id}}" style="color: #4c6687; padding-right:7px;padding-left:7px;padding-top: 20px;">{{c.name}}</a>
+
+		{% endfor %}
+	</div>
+        <br/>
+        <br/>
+    <input class="hide" id="hd-4" type="checkbox">
+    <label for="hd-4">Колебания и волны</label>
+    <div align="justify" style="width: 70%; margin-left: 15%; padding: 10px; text-align: justify; min-height: 300px; margin-top: 10%; text-align: left;">
+		{% for d in tasks4 %}
+			<a href="/{{d.id}}" style="color: #4c6687; padding-right:7px;padding-left:7px;padding-top: 20px;">{{d.name}}</a>
+
+		{% endfor %}
+	</div>
+        <br/>
+        <br/>
+    <input class="hide" id="hd-5" type="checkbox">
+    <label for="hd-5">Оптика</label>
+    <div align="justify" style="width: 70%; margin-left: 15%; padding: 10px; text-align: justify; min-height: 300px; margin-top: 10%; text-align: left;">
+		{% for f in tasks5 %}
+			<a href="/{{f.id}}" style="color: #4c6687; padding-right:7px;padding-left:7px;padding-top: 20px;">{{f.name}}</a>
+
+		{% endfor %}
+	</div>
+        <br/>
+        <br/>
+    <input class="hide" id="hd-6" type="checkbox">
+    <label for="hd-6">Специальная теория относительности. Атомная и ядерная физика</label>
+    <div align="justify" style="width: 70%; margin-left: 15%; padding: 10px; text-align: justify; min-height: 300px; margin-top: 10%; text-align: left;">
+		{% for s in tasks6 %}
+			<a href="/{{s.id}}" style="color: #4c6687; padding-right:7px;padding-left:7px;padding-top: 20px;">{{s.name}}</a>
+
+		{% endfor %}
+	</div>
+        <br/>
+        <br/>
+</div>
+
+</center>
+
+</body>
+</html>
